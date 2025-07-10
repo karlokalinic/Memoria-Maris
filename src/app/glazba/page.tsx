@@ -1,7 +1,6 @@
 'use client';
 
 import { musicTracks } from '@/lib/data';
-import { PlayCircle, PauseCircle, Download } from 'lucide-react';
 import React, { useState, useRef, useEffect } from 'react';
 
 export default function GlazbaPage() {
@@ -57,8 +56,8 @@ export default function GlazbaPage() {
                 {musicTracks.map((track, index) => (
                     <li key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 gap-4 hover:bg-gray-800/60 transition-colors duration-300" style={{'--delay': `${index * 50}ms`} as React.CSSProperties}>
                         <div className="flex items-center space-x-4">
-                            <button onClick={() => togglePlay(track.file)} className="text-primary focus:outline-none transition-transform duration-200 hover:scale-110 flex-shrink-0">
-                                {activePlayer === track.file ? <PauseCircle size={32} /> : <PlayCircle size={32} />}
+                            <button onClick={() => togglePlay(track.file)} className="text-primary focus:outline-none transition-transform duration-200 hover:scale-110 flex-shrink-0 text-4xl">
+                                {activePlayer === track.file ? 'Ⅱ' : '►'}
                             </button>
                             <div>
                                 <p className="text-white text-base md:text-lg font-semibold font-lato">{track.title}</p>
@@ -70,7 +69,7 @@ export default function GlazbaPage() {
                             download 
                             className="flex items-center self-end sm:self-center gap-2 border-2 border-primary text-primary rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105"
                         >
-                            <Download size={14} />
+                            <span className="text-lg leading-none">↓</span>
                             <span>Preuzmi</span>
                         </a>
                         <audio 

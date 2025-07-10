@@ -1,6 +1,5 @@
 'use client'
 
-import { Music, BrainCircuit } from 'lucide-react';
 import { operaStructure } from '@/lib/data';
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -30,8 +29,8 @@ export default function AboutPage() {
         </div>
         <div className="mt-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-x-8 gap-y-12 text-left card-grid">
             <div className="flex gap-x-6 items-start" style={{'--delay': '0ms'} as React.CSSProperties}>
-                <div className="flex-none text-primary pt-1">
-                    <Music className="w-8 h-8" strokeWidth={1.5} />
+                <div className="flex-none text-primary pt-1 text-3xl">
+                    <span>♪</span>
                 </div>
                 <div>
                     <h3 className="text-xl font-semibold text-white font-cormorant">Glazbena Inovacija</h3>
@@ -41,8 +40,8 @@ export default function AboutPage() {
                 </div>
             </div>
             <div className="flex gap-x-6 items-start" style={{'--delay': '100ms'} as React.CSSProperties}>
-                <div className="flex-none text-primary pt-1">
-                    <BrainCircuit className="w-8 h-8" strokeWidth={1.5} />
+                <div className="flex-none text-primary pt-1 text-3xl">
+                   <span>✧</span>
                 </div>
                 <div>
                     <h3 className="text-xl font-semibold text-white font-cormorant">Psihološka Dubina</h3>
