@@ -16,7 +16,7 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <div className="relative z-20 px-4 text-white animate-fade-in-up">
         <div className="mt-10">
-          <Link href="/o-djelu" className="bg-primary text-primary-foreground font-bold py-3 px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-lg font-cormorant tracking-wider shadow-lg shadow-primary/30">
+          <Link href="/o-djelu" className="bg-primary text-primary-foreground font-bold py-3 px-8 md:px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-base md:text-lg font-cormorant tracking-wider shadow-lg shadow-primary/30">
             Uroni u avanturu
           </Link>
         </div>

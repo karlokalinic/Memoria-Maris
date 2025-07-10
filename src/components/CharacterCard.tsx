@@ -32,14 +32,14 @@ export default function CharacterCard({ character, index }: CharacterCardProps) 
           data-ai-hint={character.aiHint}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 p-6">
-          <h3 className="text-3xl font-cormorant font-bold text-white">{character.name}</h3>
-          <p className="text-primary font-lato">{character.title}</p>
+        <div className="absolute bottom-0 left-0 p-4 md:p-6">
+          <h3 className="text-2xl md:text-3xl font-cormorant font-bold text-white">{character.name}</h3>
+          <p className="text-primary font-lato text-sm md:text-base">{character.title}</p>
         </div>
       </div>
-      <div className="p-6 bg-gray-900/50">
-        <p className="text-gray-300 font-lato mb-4 h-28 overflow-auto">{character.description}</p>
-        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 font-lato min-h-[6rem] flex items-center">
+      <div className="p-4 md:p-6 bg-gray-900/50">
+        <p className="text-gray-300 font-lato mb-4 h-28 overflow-auto text-sm md:text-base">{character.description}</p>
+        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 font-lato min-h-[6rem] flex items-center text-sm md:text-base">
           <span>{character.lyricQuote}</span>
         </blockquote>
       </div>

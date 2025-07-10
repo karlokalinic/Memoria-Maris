@@ -11,7 +11,7 @@ interface LikoviGridProps {
 
 export default function LikoviGrid({ characters }: LikoviGridProps) {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 card-grid">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 card-grid">
       {characters.map((char, index) => (
         <CharacterCard
           key={char.id}
