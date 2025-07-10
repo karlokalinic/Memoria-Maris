@@ -4,23 +4,7 @@ import { Music, BrainCircuit } from 'lucide-react';
 import { operaStructure } from '@/lib/data';
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-
-const AccordionItem = ({ title, content }: { title: string, content: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="mb-2">
-      <button
-        className={`accordion-button font-cormorant text-lg md:text-xl w-full text-left py-2 font-semibold text-gray-300 hover:text-white transition-colors ${isOpen ? 'open' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {title}
-      </button>
-      <div className="accordion-content pl-4 border-l-2 border-primary text-gray-400">
-        <p className="py-2 text-sm md:text-base leading-relaxed">{content}</p>
-      </div>
-    </div>
-  );
-};
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 
 export default function AboutPage() {
@@ -83,7 +67,7 @@ export default function AboutPage() {
                              style={{'--delay': `${index * 100}ms`} as React.CSSProperties}
                         >
                             <div className="flex justify-between items-center w-full">
-                                <div className="text-left flex-1">
+                                <div className="text-left flex-1 pr-4">
                                     <h4 className="font-cormorant text-xl md:text-2xl text-primary">{act.title}</h4>
                                     <p className="italic text-gray-400 mt-1 text-sm md:text-base">"{act.paradox}"</p>
                                 </div>
@@ -126,9 +110,18 @@ export default function AboutPage() {
                 </DialogDescription>
               </DialogHeader>
               <div className="border-t border-gray-700 pt-4">
-                {selectedAct.scenes.map((scene, i) => (
-                  <AccordionItem key={i} title={scene.title} content={scene.content} />
-                ))}
+                 <Accordion type="single" collapsible className="w-full">
+                    {selectedAct.scenes.map((scene, i) => (
+                      <AccordionItem value={`item-${i}`} key={i}>
+                        <AccordionTrigger className="font-cormorant text-lg md:text-xl font-semibold text-gray-300 hover:text-white transition-colors">
+                            {scene.title}
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-4 border-l-2 border-primary text-gray-400">
+                           <p className="py-2 text-sm md:text-base leading-relaxed">{scene.content}</p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                 </Accordion>
               </div>
             </>
           )}
