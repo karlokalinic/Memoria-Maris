@@ -1,9 +1,9 @@
 'use client';
 
 import CharacterCard from '@/components/CharacterCard';
-import type { characterData } from '@/lib/data';
+import type { characterDataType } from '@/lib/data';
 
-type Character = (typeof characterData)[0];
+type Character = characterDataType[0];
 
 interface LikoviGridProps {
   characters: Character[];
@@ -16,8 +16,6 @@ export default function LikoviGrid({ characters }: LikoviGridProps) {
         <CharacterCard
           key={char.id}
           character={char}
-          adaptedQuote={char.lyricQuote}
-          isLoading={false}
           index={index}
         />
       ))}

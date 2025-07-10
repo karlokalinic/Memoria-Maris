@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { Skeleton } from '@/components/ui/skeleton';
 
 interface Character {
   id: string;
@@ -14,12 +13,10 @@ interface Character {
 
 interface CharacterCardProps {
   character: Character;
-  adaptedQuote: string;
-  isLoading: boolean;
   index: number;
 }
 
-export default function CharacterCard({ character, adaptedQuote, isLoading, index }: CharacterCardProps) {
+export default function CharacterCard({ character, index }: CharacterCardProps) {
   return (
     <div 
       className="bg-black rounded-lg overflow-hidden shadow-lg shadow-primary/10 group transform transition-all duration-500 hover:!scale-105 hover:shadow-2xl hover:shadow-primary/20" 
@@ -43,15 +40,7 @@ export default function CharacterCard({ character, adaptedQuote, isLoading, inde
       <div className="p-6 bg-gray-900/50">
         <p className="text-gray-300 font-lato mb-4 h-28 overflow-auto">{character.description}</p>
         <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 font-lato min-h-[6rem] flex items-center">
-          {isLoading ? (
-            <div className="space-y-2 w-full">
-              <Skeleton className="h-4 w-5/6" />
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-4/6" />
-            </div>
-          ) : (
-            <span>{adaptedQuote}</span>
-          )}
+          <span>{character.lyricQuote}</span>
         </blockquote>
       </div>
     </div>

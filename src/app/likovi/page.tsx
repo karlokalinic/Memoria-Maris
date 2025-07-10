@@ -1,5 +1,5 @@
-import LikoviGrid from './LikoviGrid';
 import { characterData } from '@/lib/data';
+import LikoviGrid from './LikoviGrid';
 
 export default function LikoviPage() {
   return (

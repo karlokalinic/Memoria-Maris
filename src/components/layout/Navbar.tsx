@@ -7,8 +7,10 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { href: '/o-djelu', label: 'O Djelu' },
   { href: '/likovi', label: 'Likovi' },
+  { href: '/sah', label: 'Šah' },
   { href: '/galerija', label: 'Galerija' },
   { href: '/glazba', label: 'Glazba' },
+  { href: '/dodatno', label: 'Dodatno' },
 ];
 
 export default function Navbar() {
