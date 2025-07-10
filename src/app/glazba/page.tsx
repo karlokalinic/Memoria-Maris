@@ -1,4 +1,3 @@
-
 'use client';
 
 import { musicTracks } from '@/lib/data';

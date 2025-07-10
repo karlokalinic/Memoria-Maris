@@ -12,11 +12,6 @@ export default function SahPage() {
         setIsModalOpen(true);
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedChar(null);
-    }
-
     return (
         <div className="bg-black bg-opacity-20 chessboard-bg py-20 sm:py-28 page-enter pt-[72px]">
             <div className="container mx-auto px-4 sm:px-6 relative z-10">

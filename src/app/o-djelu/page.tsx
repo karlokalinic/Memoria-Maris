@@ -3,7 +3,7 @@
 import { Music, BrainCircuit } from 'lucide-react';
 import { operaStructure } from '@/lib/data';
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const AccordionItem = ({ title, content }: { title: string, content: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,12 +31,6 @@ export default function AboutPage() {
     setSelectedAct(act);
     setIsModalOpen(true);
   }
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedAct(null);
-  }
-
 
   return (
     <div className="bg-black py-20 sm:py-28 page-enter pt-[72px]">
