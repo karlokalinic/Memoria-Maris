@@ -1,4 +1,4 @@
-import { Music, Github } from 'lucide-react';
+import { Music, BrainCircuit } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -27,7 +27,7 @@ export default function AboutPage() {
             </div>
             <div className="flex gap-x-6 items-start" style={{'--delay': '100ms'} as React.CSSProperties}>
                 <div className="flex-none text-primary pt-1">
-                    <Github className="w-8 h-8" strokeWidth={1.5} />
+                    <BrainCircuit className="w-8 h-8" strokeWidth={1.5} />
                 </div>
                 <div>
                     <h3 className="text-xl font-semibold text-white font-cormorant">Psihološka Dubina</h3>

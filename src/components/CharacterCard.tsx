@@ -50,7 +50,7 @@ export default function CharacterCard({ character, adaptedQuote, isLoading, inde
               <Skeleton className="h-4 w-4/6" />
             </div>
           ) : (
-            <span>{adaptedQuote || character.lyricQuote}</span>
+            <span>{adaptedQuote}</span>
           )}
         </blockquote>
       </div>
