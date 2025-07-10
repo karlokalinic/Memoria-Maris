@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg shadow-lg shadow-primary/10">
       <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center h-[72px]">
-        <Link href="/o-djelu" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105">
+        <Link href="/" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105">
           MEMORIA MARIS
         </Link>
         
