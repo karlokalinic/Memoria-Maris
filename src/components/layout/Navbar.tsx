@@ -42,20 +42,23 @@ export default function Navbar() {
         </ul>
 
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-2xl">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-2xl z-50">
             {isOpen ? '×' : '≡'}
           </button>
         </div>
       </nav>
 
-      <div className={`md:hidden mobile-menu ${isOpen ? 'open' : ''}`}>
-        <ul className="flex flex-col items-center justify-center h-full space-y-8">
+      {/* Mobile Menu */}
+      <div 
+        className={`mobile-menu md:hidden ${isOpen ? 'open' : ''}`}
+      >
+        <ul className="flex flex-col items-start p-4 space-y-4">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="w-full">
                 <Link 
                   href={link.href} 
                   onClick={handleNavClick} 
-                  className={`font-cormorant text-3xl transition-colors duration-300 ${pathname === link.href ? 'text-primary' : 'text-gray-300 hover:text-primary'}`}
+                  className={`block w-full text-left font-cormorant text-2xl transition-colors duration-300 py-2 px-4 rounded-md ${pathname === link.href ? 'bg-primary/20 text-primary' : 'text-gray-300 hover:bg-white/10 hover:text-primary'}`}
                 >
                   {link.label}
                 </Link>
