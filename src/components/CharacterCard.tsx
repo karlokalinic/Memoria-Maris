@@ -17,30 +17,31 @@ interface CharacterCardProps {
 }
 
 export default function CharacterCard({ character, index }: CharacterCardProps) {
+  const rotationClass = index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n2';
+
   return (
     <div 
-      className="bg-black rounded-lg overflow-hidden shadow-lg shadow-primary/10 group transform transition-all duration-500 hover:!scale-105 hover:shadow-2xl hover:shadow-primary/20" 
-      style={{'--delay': `${index * 100}ms`} as React.CSSProperties}
+      className={`mork-card bg-black border-2 border-primary overflow-hidden group ${rotationClass}`}
     >
-      <div className="relative h-96">
+      <div className="relative h-96 border-b-2 border-primary">
         <Image 
           src={character.imageUrl} 
           alt={character.name} 
           width={600}
           height={800}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
           data-ai-hint={character.aiHint}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 p-4 md:p-6">
-          <h3 className="text-2xl md:text-3xl font-cormorant font-bold text-white">{character.name}</h3>
-          <p className="text-primary font-lato text-sm md:text-base">{character.title}</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 p-4">
+          <h3 className="text-3xl md:text-4xl font-cormorant font-bold text-secondary">{character.name}</h3>
+          <p className="text-primary font-special text-sm md:text-base">{character.title}</p>
         </div>
       </div>
-      <div className="p-4 md:p-6 bg-gray-900/50">
-        <p className="text-gray-300 font-lato mb-4 h-28 overflow-auto text-sm md:text-base">{character.description}</p>
-        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 font-lato min-h-[6rem] flex items-center text-sm md:text-base">
-          <span>{character.lyricQuote}</span>
+      <div className="p-4 md:p-6">
+        <p className="text-white font-lato mb-4 text-sm md:text-base">{character.description}</p>
+        <blockquote className="border-l-4 border-secondary pl-4 italic text-gray-300 font-special text-sm md:text-base">
+          "{character.lyricQuote}"
         </blockquote>
       </div>
     </div>

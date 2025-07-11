@@ -13,49 +13,50 @@ export default function SahPage() {
     };
 
     return (
-        <div className="bg-black bg-opacity-20 chessboard-bg py-20 sm:py-28 page-enter pt-[72px]">
+        <div className="bg-black py-20 sm:py-28 page-enter pt-[72px]">
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 <div className="text-center mb-12 md:mb-16">
-                    <h1 className="text-4xl md:text-5xl font-cormorant text-white">Lica i Figure</h1>
-                    <p className="mt-2 text-base md:text-lg text-gray-400 font-lato">Kliknite na kartu da otkrijete dvostruki identitet.</p>
+                    <h1 className="text-5xl md:text-6xl font-cormorant text-primary chaotic-rotate-1 text-shadow-custom">Lica i Figure</h1>
+                    <p className="mt-2 text-lg md:text-xl text-white font-special chaotic-rotate-n1">Kliknite na kartu da otkrijete dvostruki identitet.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 card-grid">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.values(chessData).map((char, index) => (
                         <div 
                             key={index}
-                            className="glass-card p-6 rounded-lg cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary"
-                            style={{'--delay': `${index * 100}ms`} as React.CSSProperties}
+                            className={`mork-card p-6 cursor-pointer ${index % 3 === 0 ? 'chaotic-rotate-2' : index % 3 === 1 ? 'chaotic-rotate-n1' : 'chaotic-rotate-1'}`}
                             onClick={() => openModal(char)}
                         >
-                            <div className="flex justify-between items-center">
-                                <h3 className="font-cormorant text-2xl md:text-3xl text-white">{char.operaName}</h3>
-                                <div className="text-4xl md:text-5xl text-primary">{char.chessSymbol}</div>
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="font-cormorant text-3xl md:text-4xl text-secondary">{char.operaName}</h3>
+                                    <p className="text-primary mt-1 font-special">{char.chessPiece}</p>
+                                </div>
+                                <div className="text-6xl md:text-7xl text-primary opacity-80">{char.chessSymbol}</div>
                             </div>
-                            <p className="text-gray-400 mt-2 font-lato text-sm md:text-base">{char.chessPiece}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-                <DialogContent className="bg-secondary/80 backdrop-blur-lg text-white border-primary/50 max-w-4xl w-[95%]">
+                <DialogContent className="bg-black text-white border-4 border-secondary max-w-4xl w-[95%]">
                     {selectedChar && (
                         <>
                             <DialogHeader>
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
-                                        <DialogTitle className="font-cormorant text-3xl md:text-5xl text-white">{selectedChar.operaName}</DialogTitle>
-                                        <p className="text-primary text-xl md:text-2xl font-semibold font-lato">{selectedChar.chessPiece}</p>
+                                        <DialogTitle className="font-cormorant text-4xl md:text-6xl text-secondary">{selectedChar.operaName}</DialogTitle>
+                                        <p className="text-primary text-xl md:text-2xl font-special mt-2">{selectedChar.chessPiece}</p>
                                     </div>
-                                    <div className="text-5xl md:text-7xl text-primary opacity-50">{selectedChar.chessSymbol}</div>
+                                    <div className="text-7xl md:text-8xl text-primary opacity-50">{selectedChar.chessSymbol}</div>
                                 </div>
                             </DialogHeader>
-                            <div className="my-6 border-t border-b border-gray-700 py-4">
-                                <h4 className="font-cormorant text-lg md:text-xl text-gray-300 mb-2">Opis lika u operi:</h4>
-                                <p className="italic text-gray-400 font-lato text-sm md:text-base">"{selectedChar.operaDesc}"</p>
+                            <div className="my-6 border-t-2 border-b-2 border-primary/50 py-4">
+                                <h4 className="font-cormorant text-xl md:text-2xl text-white mb-2">Opis lika u operi:</h4>
+                                <p className="italic text-gray-300 font-lato text-sm md:text-base">"{selectedChar.operaDesc}"</p>
                             </div>
                             <div>
-                                <h4 className="font-cormorant text-lg md:text-xl text-gray-300 mb-2">Psihološka analiza figure:</h4>
+                                <h4 className="font-cormorant text-xl md:text-2xl text-white mb-2">Psihološka analiza figure:</h4>
                                 <p className="leading-relaxed font-lato text-sm md:text-base">{selectedChar.analysis}</p>
                             </div>
                         </>

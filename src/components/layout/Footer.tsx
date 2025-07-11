@@ -9,10 +9,10 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black border-t border-primary/20">
-      <div className="container mx-auto px-6 py-8 text-center text-gray-500">
-        <p className="font-cormorant text-lg text-gray-400">Cantata de Septem Perspectivae</p>
-        <p className="font-lato text-sm mt-2">
+    <footer className="bg-black border-t-2 border-primary/50 py-12">
+      <div className="container mx-auto px-6 text-center text-white">
+        <p className="font-cormorant text-2xl text-primary chaotic-rotate-1 glitch">Cantata de Septem Perspectivae</p>
+        <p className="font-special text-sm mt-4 chaotic-rotate-n1">
           © {year || new Date().getFullYear()} Karlo Legend. Sva prava pridržana.
         </p>
       </div>

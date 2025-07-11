@@ -21,29 +21,28 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg shadow-lg shadow-primary/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b-2 border-primary">
       <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center h-[72px]">
-        <Link href="/" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105">
+        <Link href="/" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105 chaotic-rotate-n1 glitch">
           MEMORIA MARIS
         </Link>
         
         <ul className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+          {navLinks.map((link, index) => (
+            <li key={link.href} className={index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n2'}>
               <Link 
                 href={link.href} 
-                className={`font-lato transition-colors duration-300 relative text-sm lg:text-base ${pathname === link.href ? 'text-primary' : 'text-gray-300 hover:text-primary'}`}
+                className={`font-special transition-colors duration-300 text-sm lg:text-base ${pathname === link.href ? 'text-secondary' : 'text-white hover:text-primary'}`}
               >
                 {link.label}
-                {pathname === link.href && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary animate-slide-in"></span>}
               </Link>
             </li>
           ))}
         </ul>
 
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-2xl z-50">
-            {isOpen ? '×' : '≡'}
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-3xl z-50 font-cormorant text-secondary">
+            {isOpen ? 'X' : '≡'}
           </button>
         </div>
       </nav>
@@ -52,13 +51,13 @@ export default function Navbar() {
       <div 
         className={`mobile-menu md:hidden ${isOpen ? 'open' : ''}`}
       >
-        <ul className="flex flex-col items-start p-4 space-y-4">
+        <ul className="flex flex-col items-center justify-center h-full p-4 space-y-6">
             {navLinks.map((link) => (
-              <li key={link.href} className="w-full">
+              <li key={link.href} className="w-full text-center">
                 <Link 
                   href={link.href} 
                   onClick={handleNavClick} 
-                  className={`block w-full text-left font-cormorant text-2xl transition-colors duration-300 py-2 px-4 rounded-md ${pathname === link.href ? 'bg-primary/20 text-primary' : 'text-gray-300 hover:bg-white/10 hover:text-primary'}`}
+                  className={`block w-full font-cormorant text-4xl transition-colors duration-300 py-2 ${pathname === link.href ? 'text-secondary' : 'text-white hover:text-primary'}`}
                 >
                   {link.label}
                 </Link>
