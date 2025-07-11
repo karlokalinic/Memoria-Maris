@@ -37,7 +37,7 @@ export default function DodatnoPage() {
             <section className="py-20 md:py-28 text-center">
                 <div className="container mx-auto px-6 max-w-4xl chaotic-rotate-1">
                     <h2 className="text-4xl md:text-5xl font-cormorant text-primary">Pouka Tragedije</h2>
-                    <p className="text-lg md:text-xl mt-6 leading-relaxed text-gray-200 font-lato">
+                    <p className="text-base md:text-xl mt-6 leading-relaxed text-gray-200 font-lato">
                         Konačna istina opere, izrečena kroz Pripovjedača, leži u paradoksu Realitetne terapije: ne postoji izdaja od strane vanjskog svijeta. More ne izdaje, Oluja ne mrzi. Osjećaj izdaje je bol koja nastaje iz našeg vlastitog, nerealnog očekivanja da možemo kontrolirati druge i svijet oko sebe. Gusar nije žrtva sudbine; on je žrtva vlastite slike o sebi koju nije mogao ispuniti.
                     </p>
                     <p className="text-xl md:text-2xl mt-8 leading-relaxed text-secondary font-bold font-special chaotic-rotate-n2">

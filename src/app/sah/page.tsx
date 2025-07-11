@@ -16,14 +16,14 @@ export default function SahPage() {
         <div className="bg-black py-20 sm:py-28 page-enter pt-[72px]">
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 <div className="text-center mb-12 md:mb-16">
-                    <h1 className="text-5xl md:text-6xl font-cormorant text-primary chaotic-rotate-1 text-shadow-custom">Lica i Figure</h1>
+                    <h1 className="text-4xl md:text-6xl font-cormorant text-primary chaotic-rotate-1 text-shadow-custom">Lica i Figure</h1>
                     <p className="mt-2 text-lg md:text-xl text-white font-special chaotic-rotate-n1">Kliknite na kartu da otkrijete dvostruki identitet.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.values(chessData).map((char, index) => (
                         <div 
                             key={index}
-                            className={`mork-card p-6 cursor-pointer ${index % 3 === 0 ? 'chaotic-rotate-2' : index % 3 === 1 ? 'chaotic-rotate-n1' : 'chaotic-rotate-1'}`}
+                            className={`mork-card p-6 ${index % 3 === 0 ? 'chaotic-rotate-2' : index % 3 === 1 ? 'chaotic-rotate-n1' : 'chaotic-rotate-1'}`}
                             onClick={() => openModal(char)}
                         >
                             <div className="flex justify-between items-start">

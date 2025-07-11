@@ -44,7 +44,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-24">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 px-4">
                 <h2 className="text-4xl md:text-5xl font-cormorant text-primary chaotic-rotate-1">Struktura Opere: Silazak i Stvaranje</h2>
                 <p className="mt-2 text-base md:text-lg text-white font-lato chaotic-rotate-n2">Svaki čin je istovremeno korak dublje u psihu i korak bliže novom svitanju.</p>
             </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                  <Accordion type="single" collapsible className="w-full">
                     {selectedAct.scenes.map((scene, i) => (
                       <AccordionItem value={`item-${i}`} key={i} className="border-b-2 border-primary/30">
-                        <AccordionTrigger className="font-cormorant text-xl md:text-2xl text-white hover:text-secondary transition-colors">
+                        <AccordionTrigger className="font-cormorant text-xl md:text-2xl text-white hover:text-secondary transition-colors text-left">
                             {scene.title}
                         </AccordionTrigger>
                         <AccordionContent className="pl-4 border-l-2 border-secondary text-gray-300 font-lato">

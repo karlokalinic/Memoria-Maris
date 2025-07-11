@@ -27,7 +27,7 @@ export default function Navbar() {
           MEMORIA MARIS
         </Link>
         
-        <ul className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <ul className="hidden lg:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link, index) => (
             <li key={link.href} className={index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n2'}>
               <Link 
@@ -40,7 +40,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-3xl z-50 font-cormorant text-secondary">
             {isOpen ? 'X' : '≡'}
           </button>
@@ -49,7 +49,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div 
-        className={`mobile-menu md:hidden ${isOpen ? 'open' : ''}`}
+        className={`mobile-menu lg:hidden ${isOpen ? 'open' : ''}`}
       >
         <ul className="flex flex-col items-center justify-center h-full p-4 space-y-6">
             {navLinks.map((link) => (
