@@ -83,7 +83,7 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                                                 <p className="italic text-gray-400 font-lato text-sm md:text-base line-clamp-2">
                                                     "{act.paradox}"
                                                 </p>
-                                                <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
                                             </div>
                                         </div>
                                         <div className="text-right text-xs sm:text-sm flex flex-col pl-4 border-l-2 border-primary/50">
@@ -100,7 +100,7 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                                 </div>
                             </div>
                              {index < connectors.length && (
-                                <div className="my-4 text-center text-gray-400 font-connector italic max-w-sm mx-auto text-base">
+                                <div className="my-4 text-center text-gray-400 font-lato max-w-sm mx-auto text-lg">
                                    {connectors[index]}
                                 </div>
                             )}
