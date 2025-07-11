@@ -28,7 +28,6 @@ const CreationIcon = () => (
     </svg>
 );
 
-
 export default function OperaStructure({ acts, connectors, onActClick }: OperaStructureProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [pathProgress, setPathProgress] = useState(0);
@@ -54,70 +53,67 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
     }, []);
     
     return (
-        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4" style={{'--progress': pathProgress} as React.CSSProperties}>
-            
-            {/* Left Side Path (Hell) */}
-            <div className="absolute top-0 left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] w-px h-full bg-secondary/30">
-                <div className="absolute w-full h-full bg-secondary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'top' }}></div>
-            </div>
-             <div className="absolute top-16 left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] -translate-x-1/2 z-20 text-center">
-                <div className="relative -top-16 text-center">
-                    <HellIcon />
-                    <span className="font-cormorant text-secondary text-lg mt-2 block">Silazak</span>
+        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16" style={{'--progress': pathProgress} as React.CSSProperties}>
+            <div className="grid grid-cols-[1fr_auto_1fr] gap-x-8 md:gap-x-16">
+                
+                {/* Left Column (Hell) */}
+                <div className="relative flex justify-end pt-24">
+                     <div className="absolute top-0 right-0 text-right z-20">
+                        <span className="font-cormorant text-secondary text-lg block">Silazak</span>
+                        <div className="flex justify-end"><HellIcon /></div>
+                    </div>
+                    <div className="relative w-px h-full bg-secondary/30">
+                        <div className="absolute w-full h-full bg-secondary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'top' }}></div>
+                    </div>
                 </div>
-            </div>
 
-            {/* Right Side Path (Creation) */}
-            <div className="absolute top-0 right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] w-px h-full bg-primary/30">
-                 <div className="absolute w-full h-full bg-primary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'bottom' }}></div>
-            </div>
-            <div className="absolute bottom-16 right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] translate-x-1/2 z-20 text-center">
-                <div className="relative -bottom-16 text-center">
-                    <CreationIcon />
-                    <span className="font-cormorant text-primary text-lg mt-2 block">Stvaranje</span>
-                </div>
-            </div>
-
-
-            {acts.map((act, index) => (
-                <React.Fragment key={act.id}>
-                    <div className="relative flex justify-center items-center my-16 md:my-8" style={{minHeight: '150px'}}>
-                        
-                        {/* Left Side Dot (Hell) */}
-                        <div className="absolute left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] -translate-x-1/2 flex items-center z-10">
-                            <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary"></div>
-                        </div>
-
-                        {/* Right Side Dot (Creation) */}
-                        <div className="absolute right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] translate-x-1/2 flex items-center z-10">
-                             <div className="w-6 h-6 rounded-full bg-black border-2 border-primary"></div>
-                        </div>
-
-                        {/* Center Card */}
-                        <div 
-                            className="mork-card w-full max-w-md my-2 relative z-10 cursor-pointer"
-                            onClick={() => onActClick(act)}
-                        >
-                            <div className="flex justify-between items-center w-full">
-                                <div className="text-left flex-1 pr-4">
-                                    <h4 className="font-cormorant text-xl md:text-2xl text-white">{act.title}</h4>
-                                    <p className="italic text-gray-400 mt-1 text-sm md:text-base font-lato">"{act.paradox}"</p>
+                {/* Center Column (Acts) */}
+                <div>
+                    {acts.map((act, index) => (
+                        <React.Fragment key={act.id}>
+                            <div className="relative flex justify-center items-center my-12 md:my-8" style={{minHeight: '150px'}}>
+                                <div 
+                                    className="mork-card w-full max-w-md my-2 relative z-10"
+                                    onClick={() => onActClick(act)}
+                                >
+                                    <div className="flex justify-between items-center w-full">
+                                        <div className="text-left flex-1 pr-4">
+                                            <h4 className="font-cormorant text-xl md:text-2xl text-white">{act.title}</h4>
+                                            <p className="italic text-gray-400 mt-1 text-sm md:text-base font-lato">"{act.paradox}"</p>
+                                        </div>
+                                        <div className="text-right text-xs sm:text-sm flex flex-col pl-4 border-l-2 border-primary/50">
+                                            <p className="text-yellow-300">{act.dan}</p>
+                                            <p className="text-pink-400 mt-1">{act.krug}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="text-right text-xs sm:text-sm flex flex-col pl-4 border-l-2 border-primary/50">
-                                    <p className="text-yellow-300">{act.dan}</p>
-                                    <p className="text-pink-400 mt-1">{act.krug}</p>
+                                <div className="absolute left-0 -translate-x-[calc(100%_+_2rem)] md:-translate-x-[calc(100%_+_4rem)] flex items-center z-20">
+                                    <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary"></div>
+                                </div>
+                                <div className="absolute right-0 translate-x-[calc(100%_+_2rem)] md:translate-x-[calc(100%_+_4rem)] flex items-center z-20">
+                                     <div className="w-6 h-6 rounded-full bg-black border-2 border-primary"></div>
                                 </div>
                             </div>
-                        </div>
+                             {index < connectors.length && (
+                                <div className="my-4 text-center text-gray-400 font-special italic max-w-sm mx-auto">
+                                   {connectors[index]}
+                                </div>
+                            )}
+                        </React.Fragment>
+                    ))}
+                </div>
 
+                {/* Right Column (Creation) */}
+                <div className="relative flex justify-start pb-24">
+                     <div className="absolute bottom-0 left-0 text-left z-20">
+                        <div className="flex justify-start"><CreationIcon /></div>
+                        <span className="font-cormorant text-primary text-lg mt-2 block">Stvaranje</span>
                     </div>
-                    {index < connectors.length && (
-                        <div className="my-4 text-center text-gray-400 font-special italic max-w-sm mx-auto">
-                           {connectors[index]}
-                        </div>
-                    )}
-                </React.Fragment>
-            ))}
+                    <div className="relative w-px h-full bg-primary/30">
+                         <div className="absolute w-full h-full bg-primary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'bottom' }}></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
