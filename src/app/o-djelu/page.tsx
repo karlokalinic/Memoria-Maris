@@ -4,6 +4,7 @@ import { operaStructure } from '@/lib/data';
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import OperaStructure from './OperaStructure';
 
 
 export default function AboutPage() {
@@ -43,36 +44,11 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-24">
-            <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-cormorant text-primary chaotic-rotate-1">Struktura Opere: Silazak u Devet Krugova</h2>
-                <p className="mt-2 text-base md:text-lg text-white font-lato chaotic-rotate-n2">Svaki čin je istovremeno Stvaranje i Uništenje.</p>
+            <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-cormorant text-primary chaotic-rotate-1">Struktura Opere: Silazak i Stvaranje</h2>
+                <p className="mt-2 text-base md:text-lg text-white font-lato chaotic-rotate-n2">Svaki čin je istovremeno korak dublje u psihu i korak bliže novom svitanju.</p>
             </div>
-            <div className="flex flex-col items-center max-w-4xl mx-auto">
-                {operaStructure.acts.map((act, index) => (
-                    <React.Fragment key={act.id}>
-                        <div 
-                            className={`mork-card w-full my-2 cursor-pointer ${index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n1'}`}
-                            onClick={() => openModal(act)}
-                        >
-                            <div className="flex justify-between items-center w-full">
-                                <div className="text-left flex-1 pr-4">
-                                    <h4 className="font-cormorant text-xl md:text-2xl text-secondary">{act.title}</h4>
-                                    <p className="italic text-gray-400 mt-1 text-sm md:text-base font-lato">"{act.paradox}"</p>
-                                </div>
-                                <div className="text-right text-xs sm:text-sm flex flex-col pl-4 border-l-2 border-primary/50">
-                                    <p className="text-yellow-300">{act.dan}</p>
-                                    <p className="text-pink-400 mt-1">{act.krug}</p>
-                                </div>
-                            </div>
-                        </div>
-                        {index < operaStructure.connectors.length && (
-                            <div className={`my-8 text-center text-gray-400 font-special italic ${index % 2 === 0 ? 'chaotic-rotate-2' : 'chaotic-rotate-n2'}`}>
-                                {operaStructure.connectors[index]}
-                            </div>
-                        )}
-                    </React.Fragment>
-                ))}
-            </div>
+            <OperaStructure acts={operaStructure.acts} connectors={operaStructure.connectors} onActClick={openModal} />
         </div>
       </div>
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
