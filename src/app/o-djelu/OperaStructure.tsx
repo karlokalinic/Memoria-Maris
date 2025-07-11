@@ -64,9 +64,9 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                     <path d="M 1 0 V 1800" stroke="hsl(var(--secondary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
                     <path d="M 1 0 V 1800" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`} />
                 </svg>
-                 <div className="absolute top-8 left-0 flex flex-col items-start gap-2">
+                <div className="absolute top-16 md:top-12 -left-4 md:-left-6 text-center z-20">
                     <HellIcon />
-                    <span className="font-cormorant text-secondary text-lg">Silazak</span>
+                    <span className="font-cormorant text-secondary text-lg mt-2 block">Silazak</span>
                 </div>
             </div>
             
@@ -75,9 +75,9 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                     <path d="M 1 1800 V 0" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
                     <path d="M 1 1800 V 0" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`}/>
                 </svg>
-                 <div className="absolute bottom-8 right-0 flex flex-col items-end gap-2">
+                 <div className="absolute bottom-16 md:bottom-12 -right-4 md:-right-6 text-center z-20">
                     <CreationIcon />
-                    <span className="font-cormorant text-primary text-lg">Stvaranje</span>
+                    <span className="font-cormorant text-primary text-lg mt-2 block">Stvaranje</span>
                 </div>
             </div>
 
