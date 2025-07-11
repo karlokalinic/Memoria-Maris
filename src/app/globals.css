@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%; /* Deep Navy */
+    --background: 222 47% 7%; /* Deep Navy #0A0F19 */
     --foreground: 210 40% 98%; /* Off-white */
 
-    --card: 222 47% 13%;
+    --card: 222 47% 9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 222 47% 7%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 45 76% 51%; /* Antique Gold */
+    --primary: 45 76% 51%; /* Antique Gold #D4AF37 */
     --primary-foreground: 222 47% 11%;
 
-    --secondary: 0 100% 34%; /* Deep Crimson */
+    --secondary: 0 100% 27%; /* Deep Crimson #8B0000 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217 33% 17%;
@@ -36,15 +36,15 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 222 47% 7%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 13%;
+    --card: 222 47% 9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
+    --popover: 222 47% 7%;
     --popover-foreground: 210 40% 98%;
     --primary: 45 76% 51%;
     --primary-foreground: 222 47% 11%;
-    --secondary: 0 100% 34%;
+    --secondary: 0 100% 27%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
@@ -145,5 +145,35 @@
 
   .mobile-menu.open {
     max-height: 100vh;
+  }
+
+  /* Animated Portrait Overlays */
+  .wave-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/wavecut.png');
+    background-size: 200px 200px;
+    opacity: 0.1;
+    animation: move-waves 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes move-waves {
+    from { background-position: 0 0; }
+    to { background-position: -200px -200px; }
+  }
+
+  .shimmer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 60%);
+    background-size: 200% 100%;
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
   }
 }

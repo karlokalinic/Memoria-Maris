@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface Character {
   id: string;
@@ -23,7 +24,7 @@ export default function CharacterCard({ character, index }: CharacterCardProps) 
     <div 
       className={`mork-card bg-black border-2 border-primary overflow-hidden group ${rotationClass}`}
     >
-      <div className="relative h-96 border-b-2 border-primary">
+      <div className="relative h-96 border-b-2 border-primary overflow-hidden">
         <Image 
           src={character.imageUrl} 
           alt={character.name} 
@@ -33,6 +34,15 @@ export default function CharacterCard({ character, index }: CharacterCardProps) 
           data-ai-hint={character.aiHint}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+        
+        {/* Animated Overlays */}
+        {character.id === 'sirena' && (
+          <div className="shimmer-overlay"></div>
+        )}
+        {character.id === 'gusar' && (
+          <div className="wave-overlay"></div>
+        )}
+
         <div className="absolute bottom-0 left-0 p-4">
           <h3 className="text-3xl md:text-4xl font-cormorant font-bold text-secondary">{character.name}</h3>
           <p className="text-primary font-special text-sm md:text-base">{character.title}</p>
