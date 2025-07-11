@@ -4,57 +4,57 @@
 
 @layer base {
   :root {
-    --background: 220 39% 8%; /* Deep Navy */
+    --background: 222 47% 11%; /* Deep Navy */
     --foreground: 210 40% 98%; /* Off-white */
 
-    --card: 220 39% 10%;
+    --card: 222 47% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 39% 8%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 45 66% 52%; /* Antique Gold */
-    --primary-foreground: 220 39% 8%;
+    --primary: 45 76% 51%; /* Antique Gold */
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 0 100% 27%; /* Deep Crimson */
+    --secondary: 0 100% 34%; /* Deep Crimson */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 45 66% 52%;
-    --accent-foreground: 220 39% 8%;
+    --accent: 45 76% 51%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 66% 45%; /* Muted Gold for borders */
+    --border: 45 76% 41%; /* Muted Gold for borders */
     --input: 217 33% 17%;
-    --ring: 45 66% 52%;
+    --ring: 45 76% 51%;
 
     --radius: 0.1rem;
   }
 
   .dark {
-    --background: 220 39% 8%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-    --card: 220 39% 10%;
+    --card: 222 47% 13%;
     --card-foreground: 210 40% 98%;
-    --popover: 220 39% 8%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 45 66% 52%;
-    --primary-foreground: 220 39% 8%;
-    --secondary: 0 100% 27%;
+    --primary: 45 76% 51%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 0 100% 34%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 45 66% 52%;
-    --accent-foreground: 220 39% 8%;
+    --accent: 45 76% 51%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-    --border: 45 66% 45%;
+    --border: 45 76% 41%;
     --input: 217 33% 17%;
-    --ring: 45 66% 52%;
+    --ring: 45 76% 51%;
   }
 }
 
@@ -67,7 +67,7 @@
     overflow-x: hidden;
   }
   .font-cormorant {
-    font-family: 'Metal Mania', cursive;
+    font-family: 'Cinzel Decorative', serif;
   }
   .font-lato {
     font-family: 'Cinzel', serif;
