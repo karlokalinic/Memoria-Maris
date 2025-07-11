@@ -73,13 +73,18 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                         <React.Fragment key={act.id}>
                             <div className="relative flex justify-center items-center my-12 md:my-8" style={{minHeight: '150px'}}>
                                 <div 
-                                    className="mork-card w-full max-w-md my-2 relative z-10"
+                                    className="mork-card w-full max-w-md my-2 relative z-10 cursor-pointer"
                                     onClick={() => onActClick(act)}
                                 >
-                                    <div className="flex justify-between items-center w-full">
-                                        <div className="text-left flex-1 pr-4">
+                                    <div className="flex justify-between items-start w-full min-h-[120px]">
+                                        <div className="text-left flex-1 pr-4 flex flex-col">
                                             <h4 className="font-cormorant text-xl md:text-2xl text-white">{act.title}</h4>
-                                            <p className="italic text-gray-400 mt-1 text-sm md:text-base font-lato">"{act.paradox}"</p>
+                                            <div className="relative mt-2 flex-grow">
+                                                <p className="italic text-gray-400 font-lato text-sm md:text-base line-clamp-2">
+                                                    "{act.paradox}"
+                                                </p>
+                                                <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+                                            </div>
                                         </div>
                                         <div className="text-right text-xs sm:text-sm flex flex-col pl-4 border-l-2 border-primary/50">
                                             <p className="text-yellow-300">{act.dan}</p>
