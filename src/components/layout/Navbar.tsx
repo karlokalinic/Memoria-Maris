@@ -21,33 +21,35 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center h-[72px] bg-black/80 backdrop-blur-sm border-b-2 border-primary">
-        <Link href="/" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105 chaotic-rotate-n1 glitch">
-          MEMORIA MARIS
-        </Link>
-        
-        <ul className="hidden lg:flex items-center space-x-6 lg:space-x-8">
-          {navLinks.map((link, index) => (
-            <li key={link.href} className={index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n2'}>
-              <Link 
-                href={link.href} 
-                className={`font-special transition-colors duration-300 text-sm lg:text-base ${pathname === link.href ? 'text-secondary' : 'text-white hover:text-primary'}`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center h-[72px] bg-black/80 backdrop-blur-sm border-b-2 border-primary">
+          <Link href="/" className="text-xl md:text-2xl font-cormorant font-bold text-primary tracking-wider transition-transform hover:scale-105 chaotic-rotate-n1 glitch">
+            MEMORIA MARIS
+          </Link>
+          
+          <ul className="hidden lg:flex items-center space-x-6 lg:space-x-8">
+            {navLinks.map((link, index) => (
+              <li key={link.href} className={index % 2 === 0 ? 'chaotic-rotate-1' : 'chaotic-rotate-n2'}>
+                <Link 
+                  href={link.href} 
+                  className={`font-special transition-colors duration-300 text-sm lg:text-base ${pathname === link.href ? 'text-secondary' : 'text-white hover:text-primary'}`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-3xl z-50 font-cormorant text-secondary">
-            {isOpen ? 'X' : '≡'}
-          </button>
-        </div>
-      </nav>
+          <div className="lg:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none text-3xl z-50 font-cormorant text-secondary">
+              {isOpen ? 'X' : '≡'}
+            </button>
+          </div>
+        </nav>
+      </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu moved outside of header to ensure proper stacking context for backdrop-filter */}
       <div 
         className={`mobile-menu lg:hidden ${isOpen ? 'open' : ''}`}
       >
@@ -65,6 +67,6 @@ export default function Navbar() {
             ))}
         </ul>
       </div>
-    </header>
+    </>
   );
 };
