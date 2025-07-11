@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 text-center text-white">
         <p className="font-cormorant text-2xl text-primary chaotic-rotate-1 glitch">Cantata de Septem Perspectivae</p>
         <p className="font-special text-sm mt-4 chaotic-rotate-n1">
-          © {year || new Date().getFullYear()} Karlo Legend. Sva prava pridržana.
+          © {year} Karlo Legend. Sva prava pridržana.
         </p>
       </div>
     </footer>
