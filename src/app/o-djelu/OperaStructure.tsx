@@ -56,26 +56,26 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
     }, []);
     
     return (
-        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto px-12 md:px-0" style={{'--progress': pathProgress} as React.CSSProperties}>
+        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto px-12" style={{'--progress': pathProgress} as React.CSSProperties}>
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent"></div>
             
-            <div className="absolute top-0 left-0 md:left-1/4 md:-translate-x-1/2 h-full">
+            <div className="absolute top-0 left-4 md:left-8 h-full">
                 <svg width="100%" height="100%" viewBox="0 0 2 1800" preserveAspectRatio="none" className="absolute top-0 left-0 w-2 h-full">
                     <path d="M 1 0 V 1800" stroke="hsl(var(--secondary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
                     <path d="M 1 0 V 1800" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`} />
                 </svg>
-                 <div className="absolute top-8 left-0 -translate-x-1/2 flex flex-col items-center gap-2">
+                 <div className="absolute top-8 left-0 flex flex-col items-start gap-2">
                     <HellIcon />
                     <span className="font-cormorant text-secondary text-lg">Silazak</span>
                 </div>
             </div>
             
-            <div className="absolute top-0 right-0 md:right-1/4 md:translate-x-1/2 h-full">
+            <div className="absolute top-0 right-4 md:right-8 h-full">
                  <svg width="100%" height="100%" viewBox="0 0 2 1800" preserveAspectRatio="none" className="absolute top-0 right-0 w-2 h-full">
                     <path d="M 1 1800 V 0" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
                     <path d="M 1 1800 V 0" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`}/>
                 </svg>
-                 <div className="absolute bottom-8 right-0 translate-x-1/2 flex flex-col items-center gap-2">
+                 <div className="absolute bottom-8 right-0 flex flex-col items-end gap-2">
                     <CreationIcon />
                     <span className="font-cormorant text-primary text-lg">Stvaranje</span>
                 </div>
@@ -86,12 +86,12 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                 <React.Fragment key={act.id}>
                     <div className="relative flex justify-center items-center my-16 md:my-8" style={{minHeight: '150px'}}>
                         {/* Left Side (Hell) */}
-                        <div className="absolute left-0 md:left-1/4 md:-translate-x-1/2 flex items-center">
+                        <div className="absolute left-4 md:left-8 flex items-center">
                             <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary z-10"></div>
                         </div>
 
                         {/* Right Side (Creation) */}
-                        <div className="absolute right-0 md:right-1/4 md:translate-x-1/2 flex items-center">
+                        <div className="absolute right-4 md:right-8 flex items-center">
                              <div className="w-6 h-6 rounded-full bg-black border-2 border-primary z-10"></div>
                         </div>
 
