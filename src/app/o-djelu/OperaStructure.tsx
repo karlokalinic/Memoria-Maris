@@ -97,7 +97,7 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
 
                         {/* Center Card */}
                         <div 
-                            className="mork-card w-full max-w-md my-2 cursor-pointer relative z-10"
+                            className="mork-card w-full max-w-md my-2 relative z-10"
                             onClick={() => onActClick(act)}
                         >
                             <div className="flex justify-between items-center w-full">
