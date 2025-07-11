@@ -1,0 +1,63 @@
+
+[
+  {
+    "id": "1",
+    "title": "Bioluminescent Waves at Midnight",
+    "description": "Witnessed the magical glow of bioluminescent plankton under the new moon. The waves crashed in electric blue, a truly unforgettable sight.",
+    "imageUrl": "https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=2070&auto=format&fit=crop",
+    "location": "Vaadhoo Island, Maldives",
+    "createdAt": "2023-08-15T22:30:00.000Z",
+    "likes": 152,
+    "tags": ["bioluminescence", "plankton", "night"]
+  },
+  {
+    "id": "2",
+    "title": "First Dive with a Sea Turtle",
+    "description": "An incredibly peaceful encounter with a Green Sea Turtle at the Great Barrier Reef. It glided so effortlessly through the water.",
+    "imageUrl": "https://images.unsplash.com/photo-1551893663-7132a22af4e3?q=80&w=2070&auto=format&fit=crop",
+    "location": "Great Barrier Reef, Australia",
+    "createdAt": "2024-01-20T11:00:00.000Z",
+    "likes": 230,
+    "tags": ["scuba", "turtle", "reef"]
+  },
+  {
+    "id": "3",
+    "title": "Humpback Whale Breaching",
+    "description": "A majestic Humpback whale launched itself completely out of the water. The sheer power and grace was awe-inspiring.",
+    "imageUrl": "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1780&auto=format&fit=crop",
+    "location": "Monterey Bay, California",
+    "createdAt": "2023-11-05T14:15:00.000Z",
+    "likes": 412,
+    "tags": ["whale", "breaching", "boating"]
+  },
+  {
+    "id": "4",
+    "title": "Clownfish in Anemone",
+    "description": "Found a small family of clownfish nestled safely in their host anemone. Their vibrant orange was stunning against the reef.",
+    "imageUrl": "https://images.unsplash.com/photo-1535446229555-531e13833b3a?q=80&w=1974&auto=format&fit=crop",
+    "location": "Raja Ampat, Indonesia",
+    "createdAt": "2023-05-12T09:45:00.000Z",
+    "likes": 189,
+    "tags": ["diving", "clownfish", "anemone"]
+  },
+  {
+    "id": "5",
+    "title": "Playful Dolphins at Sunrise",
+    "description": "A pod of dolphins raced the bow of our boat as the sun came up, leaping and playing in the wake. Pure joy.",
+    "imageUrl": "https://images.unsplash.com/photo-1599043338382-96b67e2318cd?q=80&w=1964&auto=format&fit=crop",
+    "location": "The Azores, Portugal",
+    "createdAt": "2024-03-02T06:20:00.000Z",
+    "likes": 350,
+    "tags": ["dolphins", "sunrise", "boating"]
+  },
+  {
+    "id": "6",
+    "title": "Giant Manta Ray Fly-by",
+    "description": "A giant Manta Ray with a wingspan of at least 5 meters soared silently over our heads during a drift dive. It was like a spaceship.",
+    "imageUrl": "https://images.unsplash.com/photo-1631481043093-b72d2b77a76c?q=80&w=2070&auto=format&fit=crop",
+    "location": "Socorro Island, Mexico",
+    "createdAt": "2023-02-18T13:00:00.000Z",
+    "likes": 390,
+    "tags": ["manta ray", "diving", "pelagic"]
+  }
+]
