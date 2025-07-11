@@ -56,26 +56,25 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
     }, []);
     
     return (
-        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto px-12" style={{'--progress': pathProgress} as React.CSSProperties}>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent"></div>
+        <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4" style={{'--progress': pathProgress} as React.CSSProperties}>
             
-            <div className="absolute top-0 left-4 md:left-8 h-full">
-                <svg width="100%" height="100%" viewBox="0 0 2 1800" preserveAspectRatio="none" className="absolute top-0 left-0 w-2 h-full">
-                    <path d="M 1 0 V 1800" stroke="hsl(var(--secondary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
-                    <path d="M 1 0 V 1800" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`} />
-                </svg>
-                <div className="absolute top-16 md:top-12 -left-4 md:-left-6 text-center z-20">
+            {/* Left Side Path (Hell) */}
+            <div className="absolute top-0 left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] w-px h-full bg-secondary/30">
+                <div className="absolute w-full h-full bg-secondary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'top' }}></div>
+            </div>
+             <div className="absolute top-16 left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] -translate-x-1/2 z-20 text-center">
+                <div className="relative -top-16 text-center">
                     <HellIcon />
                     <span className="font-cormorant text-secondary text-lg mt-2 block">Silazak</span>
                 </div>
             </div>
-            
-            <div className="absolute top-0 right-4 md:right-8 h-full">
-                 <svg width="100%" height="100%" viewBox="0 0 2 1800" preserveAspectRatio="none" className="absolute top-0 right-0 w-2 h-full">
-                    <path d="M 1 1800 V 0" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeDasharray="10 10" />
-                    <path d="M 1 1800 V 0" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray={`${1800}`} strokeDashoffset={`${1800 * (1 - pathProgress)}`}/>
-                </svg>
-                 <div className="absolute bottom-16 md:bottom-12 -right-4 md:-right-6 text-center z-20">
+
+            {/* Right Side Path (Creation) */}
+            <div className="absolute top-0 right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] w-px h-full bg-primary/30">
+                 <div className="absolute w-full h-full bg-primary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'bottom' }}></div>
+            </div>
+            <div className="absolute bottom-16 right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] translate-x-1/2 z-20 text-center">
+                <div className="relative -bottom-16 text-center">
                     <CreationIcon />
                     <span className="font-cormorant text-primary text-lg mt-2 block">Stvaranje</span>
                 </div>
@@ -85,19 +84,20 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
             {acts.map((act, index) => (
                 <React.Fragment key={act.id}>
                     <div className="relative flex justify-center items-center my-16 md:my-8" style={{minHeight: '150px'}}>
-                        {/* Left Side (Hell) */}
-                        <div className="absolute left-4 md:left-8 flex items-center">
-                            <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary z-10"></div>
+                        
+                        {/* Left Side Dot (Hell) */}
+                        <div className="absolute left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] -translate-x-1/2 flex items-center z-10">
+                            <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary"></div>
                         </div>
 
-                        {/* Right Side (Creation) */}
-                        <div className="absolute right-4 md:right-8 flex items-center">
-                             <div className="w-6 h-6 rounded-full bg-black border-2 border-primary z-10"></div>
+                        {/* Right Side Dot (Creation) */}
+                        <div className="absolute right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] translate-x-1/2 flex items-center z-10">
+                             <div className="w-6 h-6 rounded-full bg-black border-2 border-primary"></div>
                         </div>
 
                         {/* Center Card */}
                         <div 
-                            className="mork-card w-full max-w-md my-2 relative z-10"
+                            className="mork-card w-full max-w-md my-2 relative z-10 cursor-pointer"
                             onClick={() => onActClick(act)}
                         >
                             <div className="flex justify-between items-center w-full">
