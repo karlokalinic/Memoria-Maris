@@ -68,7 +68,7 @@ export default function AboutPage() {
                 </DialogDescription>
               </DialogHeader>
               <div className="border-t-2 border-primary/50 pt-4">
-                 <Accordion type="single" collapsible className="w-full">
+                 <Accordion type="multiple" className="w-full">
                     {selectedAct.scenes.map((scene, i) => (
                       <AccordionItem value={`item-${i}`} key={i} className="border-b-2 border-primary/30">
                         <AccordionTrigger className="font-cormorant text-xl md:text-2xl text-white hover:text-secondary transition-colors text-left">
