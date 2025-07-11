@@ -67,13 +67,13 @@
     overflow-x: hidden;
   }
   .font-cormorant {
-    font-family: 'Creepster', cursive;
+    font-family: 'Metal Mania', cursive;
   }
   .font-lato {
     font-family: 'Cinzel', serif;
   }
   .font-special {
-    font-family: 'Aclonica', sans-serif;
+    font-family: 'Uncial Antiqua', system-ui;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -102,11 +102,11 @@
     text-shadow: 2px 2px 0px hsl(var(--secondary)), 4px 4px 0px hsl(var(--primary) / 0.5);
   }
   
-  .chaotic-rotate-1 { transform: rotate(-3deg); }
-  .chaotic-rotate-2 { transform: rotate(2deg); }
+  .chaotic-rotate-1 { transform: rotate(3deg); }
+  .chaotic-rotate-2 { transform: rotate(-2deg); }
   .chaotic-rotate-3 { transform: rotate(5deg); }
   .chaotic-rotate-n1 { transform: rotate(-5deg); }
-  .chaotic-rotate-n2 { transform: rotate(-2deg); }
+  .chaotic-rotate-n2 { transform: rotate(2deg); }
   
   .glitch:hover {
     animation: glitch-anim 0.3s infinite;
