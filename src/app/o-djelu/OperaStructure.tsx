@@ -20,13 +20,11 @@ const HellIcon = () => (
 );
 
 const CreationIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary">
-        <path d="M12 2a10 10 0 1 0 10 10"/>
-        <path d="M12 2a10 10 0 1 0-10 10"/>
-        <path d="M12 2a10 10 0 1 1-10 10"/>
-        <path d="M12 2a10 10 0 1 1 10 10"/>
-        <path d="M2 12a10 10 0 1 0 10-10"/>
-        <path d="M2 12a10 10 0 1 1 10-10"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="hsl(var(--primary))" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary-foreground">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+        <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+        <path d="m15 9-6 6"/>
+        <path d="m9 9 6 6"/>
     </svg>
 );
 
@@ -59,10 +57,10 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
         <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4" style={{'--progress': pathProgress} as React.CSSProperties}>
             
             {/* Left Side Path (Hell) */}
-            <div className="absolute top-0 left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] w-px h-full bg-secondary/30">
+            <div className="absolute top-0 left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] w-px h-full bg-secondary/30">
                 <div className="absolute w-full h-full bg-secondary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'top' }}></div>
             </div>
-             <div className="absolute top-16 left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] -translate-x-1/2 z-20 text-center">
+             <div className="absolute top-16 left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] -translate-x-1/2 z-20 text-center">
                 <div className="relative -top-16 text-center">
                     <HellIcon />
                     <span className="font-cormorant text-secondary text-lg mt-2 block">Silazak</span>
@@ -70,10 +68,10 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
             </div>
 
             {/* Right Side Path (Creation) */}
-            <div className="absolute top-0 right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] w-px h-full bg-primary/30">
+            <div className="absolute top-0 right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] w-px h-full bg-primary/30">
                  <div className="absolute w-full h-full bg-primary" style={{ transform: `scaleY(${pathProgress})`, transformOrigin: 'bottom' }}></div>
             </div>
-            <div className="absolute bottom-16 right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] translate-x-1/2 z-20 text-center">
+            <div className="absolute bottom-16 right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] translate-x-1/2 z-20 text-center">
                 <div className="relative -bottom-16 text-center">
                     <CreationIcon />
                     <span className="font-cormorant text-primary text-lg mt-2 block">Stvaranje</span>
@@ -86,12 +84,12 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                     <div className="relative flex justify-center items-center my-16 md:my-8" style={{minHeight: '150px'}}>
                         
                         {/* Left Side Dot (Hell) */}
-                        <div className="absolute left-[calc(50%-14rem)] md:left-[calc(50%-16rem)] -translate-x-1/2 flex items-center z-10">
+                        <div className="absolute left-[calc(50%-10rem)] md:left-[calc(50%-12rem)] -translate-x-1/2 flex items-center z-10">
                             <div className="w-6 h-6 rounded-full bg-black border-2 border-secondary"></div>
                         </div>
 
                         {/* Right Side Dot (Creation) */}
-                        <div className="absolute right-[calc(50%-14rem)] md:right-[calc(50%-16rem)] translate-x-1/2 flex items-center z-10">
+                        <div className="absolute right-[calc(50%-10rem)] md:right-[calc(50%-12rem)] translate-x-1/2 flex items-center z-10">
                              <div className="w-6 h-6 rounded-full bg-black border-2 border-primary"></div>
                         </div>
 
