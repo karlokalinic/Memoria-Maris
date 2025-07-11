@@ -102,10 +102,10 @@
     text-shadow: 2px 2px 0px hsl(var(--secondary)), 4px 4px 0px hsl(var(--primary) / 0.5);
   }
   
-  .chaotic-rotate-1 { transform: rotate(3deg); }
+  .chaotic-rotate-1 { transform: rotate(1deg); }
   .chaotic-rotate-2 { transform: rotate(-2deg); }
-  .chaotic-rotate-3 { transform: rotate(5deg); }
-  .chaotic-rotate-n1 { transform: rotate(-5deg); }
+  .chaotic-rotate-3 { transform: rotate(3deg); }
+  .chaotic-rotate-n1 { transform: rotate(-1deg); }
   .chaotic-rotate-n2 { transform: rotate(2deg); }
   
   .glitch:hover {
