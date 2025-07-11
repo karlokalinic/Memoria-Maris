@@ -100,7 +100,7 @@ export default function OperaStructure({ acts, connectors, onActClick }: OperaSt
                                 </div>
                             </div>
                              {index < connectors.length && (
-                                <div className="my-4 text-center text-gray-400 font-connector italic max-w-sm mx-auto">
+                                <div className="my-4 text-center text-gray-400 font-connector italic max-w-sm mx-auto text-base">
                                    {connectors[index]}
                                 </div>
                             )}
