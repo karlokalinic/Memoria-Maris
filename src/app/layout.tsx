@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Metal+Mania&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-lato bg-black text-white">
+      <body className="font-lato bg-background text-foreground">
         <ConditionalNavbar />
         <main className="min-h-screen overflow-hidden">
           {children}

@@ -4,57 +4,57 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%; /* Black */
-    --foreground: 0 0% 100%; /* White */
+    --background: 220 39% 8%; /* Deep Navy */
+    --foreground: 210 40% 98%; /* Off-white */
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 39% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 39% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 54 100% 50%; /* Intense Yellow */
-    --primary-foreground: 0 0% 0%;
+    --primary: 45 66% 52%; /* Antique Gold */
+    --primary-foreground: 220 39% 8%;
 
-    --secondary: 328 100% 62%; /* Shocking Pink */
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 100% 27%; /* Deep Crimson */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 54 100% 50%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 45 66% 52%;
+    --accent-foreground: 220 39% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 54 100% 50%; /* Intense Yellow for borders */
-    --input: 0 0% 14.9%;
-    --ring: 54 100% 50%;
+    --border: 45 66% 45%; /* Muted Gold for borders */
+    --input: 217 33% 17%;
+    --ring: 45 66% 52%;
 
     --radius: 0.1rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 54 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 328 100% 62%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 54 100% 50%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 54 100% 50%;
-    --input: 0 0% 14.9%;
-    --ring: 54 100% 50%;
+    --background: 220 39% 8%;
+    --foreground: 210 40% 98%;
+    --card: 220 39% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 39% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 45 66% 52%;
+    --primary-foreground: 220 39% 8%;
+    --secondary: 0 100% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 45 66% 52%;
+    --accent-foreground: 220 39% 8%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 45 66% 45%;
+    --input: 217 33% 17%;
+    --ring: 45 66% 52%;
   }
 }
 
@@ -83,30 +83,30 @@
 
 @layer components {
     .mork-card {
-        @apply bg-black border-2 border-primary p-4 md:p-6 transition-transform duration-300;
+        @apply bg-background/50 border-2 border-primary/50 p-4 md:p-6 transition-transform duration-300;
     }
     .mork-card:hover {
-        @apply -translate-y-1 -translate-x-1 shadow-[4px_4px_0px_hsl(var(--secondary))];
+        @apply -translate-y-1 shadow-[4px_4px_0px_hsl(var(--primary))];
     }
     .mork-button {
       @apply bg-primary text-primary-foreground font-bold py-3 px-8 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 transform text-lg font-cormorant tracking-wider shadow-lg;
     }
     .mork-button:hover {
-       @apply -translate-y-1 -translate-x-1 shadow-[4px_4px_0px_hsl(var(--primary))];
+       @apply -translate-y-1 shadow-[4px_4px_0px_hsl(var(--background))];
     }
 }
 
 
 @layer utilities {
   .text-shadow-custom {
-    text-shadow: 2px 2px 0px hsl(var(--secondary)), 4px 4px 0px hsl(var(--primary) / 0.5);
+    text-shadow: 1px 1px 0px hsl(var(--secondary)), 2px 2px 0px hsl(var(--primary) / 0.5);
   }
   
-  .chaotic-rotate-1 { transform: rotate(1deg); }
-  .chaotic-rotate-2 { transform: rotate(-2deg); }
-  .chaotic-rotate-3 { transform: rotate(3deg); }
-  .chaotic-rotate-n1 { transform: rotate(-1deg); }
-  .chaotic-rotate-n2 { transform: rotate(2deg); }
+  .chaotic-rotate-1 { transform: rotate(0.5deg); }
+  .chaotic-rotate-2 { transform: rotate(-1deg); }
+  .chaotic-rotate-3 { transform: rotate(1.5deg); }
+  .chaotic-rotate-n1 { transform: rotate(-0.5deg); }
+  .chaotic-rotate-n2 { transform: rotate(1deg); }
   
   .glitch:hover {
     animation: glitch-anim 0.3s infinite;
@@ -114,10 +114,10 @@
 
   @keyframes glitch-anim {
     0% { transform: translate(0, 0) skew(0deg); }
-    20% { transform: translate(-2px, 2px) skew(1deg); }
-    40% { transform: translate(2px, -2px) skew(-1deg); }
-    60% { transform: translate(-1px, 1px) skew(0.5deg); }
-    80% { transform: translate(1px, -1px) skew(-0.5deg); }
+    20% { transform: translate(-1px, 1px) skew(0.5deg); }
+    40% { transform: translate(1px, -1px) skew(-0.5deg); }
+    60% { transform: translate(-0.5px, 0.5px) skew(0.2deg); }
+    80% { transform: translate(0.5px, -0.5px) skew(-0.2deg); }
     100% { transform: translate(0, 0) skew(0deg); }
   }
 
@@ -135,7 +135,7 @@
     top: 72px; 
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.98);
+    background-color: hsla(var(--background), 0.98);
     backdrop-filter: blur(10px);
     max-height: 0;
     overflow: hidden;
